@@ -28,7 +28,7 @@ public class BookTicketTests extends BaseTest {
         bookTicketPage.bookTicket(5, "Sài Gòn", "Đà Nẵng", "Soft bed", "2");
 
         Assert.assertTrue(
-                (bookTicketPage.getDepartStation().equals("Sài Gòn")) & (bookTicketPage.getArriveStation().equals("Đà Nẵng")),
+                (bookTicketPage.getDepartStation().equals("Sài Gòn")) && (bookTicketPage.getArriveStation().equals("Đà Nẵng")),
                 "Ticket books unsuccessfully!");
     }
 
@@ -44,7 +44,7 @@ public class BookTicketTests extends BaseTest {
         bookTicketPage.bookTicket(4, "Quảng Ngãi", "Nha Trang", "Soft bed", "1");
 
         Assert.assertTrue(
-                (bookTicketPage.getDepartStation().equals("Quảng Ngãi")) & (bookTicketPage.getArriveStation().equals("Nha Trang")),
+                (bookTicketPage.getDepartStation().equals("Quảng Ngãi")) && (bookTicketPage.getArriveStation().equals("Nha Trang")),
                 "Ticket books unsuccessfully!");
     }
 }

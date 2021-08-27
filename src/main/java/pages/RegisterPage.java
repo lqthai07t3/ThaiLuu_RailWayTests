@@ -1,20 +1,19 @@
 package pages;
 
 import helpers.DriverHelper;
-import helpers.ElementHelper;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 public class RegisterPage extends BasePage {
 
     //locators
-    private By txtEmail = By.id("email");
-    private By txtPassword = By.id("password");
-    private By txtConfirmPassword = By.id("confirmPassword");
-    private By txtPid = By.id("pid");
-    private By btnRegister = By.xpath("//input[@value='Register']");
-    private By lblLoginMessage = By.cssSelector("#content>p");
-    private By lblErrorMessage = By.cssSelector(".error");
+    private final By txtEmail = By.id("email");
+    private final By txtPassword = By.id("password");
+    private final By txtConfirmPassword = By.id("confirmPassword");
+    private final By txtPid = By.id("pid");
+    private final By btnRegister = By.xpath("//input[@value='Register']");
+    private final By lblLoginMessage = By.cssSelector("#content>p");
+    private final By lblErrorMessage = By.cssSelector(".error");
 
 
     //WebElements

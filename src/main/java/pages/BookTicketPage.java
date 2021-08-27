@@ -8,14 +8,14 @@ import org.openqa.selenium.support.ui.Select;
 public class BookTicketPage extends BasePage {
 
     //locators
-    private By cboDate = By.name("Date");
-    private By cboDepartFrom = By.name("DepartStation");
-    private By cboArriveAt = By.name("ArriveStation");
-    private By cboSeatType = By.name("SeatType");
-    private By cboTicketAmount = By.name("TicketAmount");
-    private By btnBookTicket = By.xpath("//input[@value='Book ticket']");
-    private By lblDepartStation = By.xpath("//table[@class='MyTable WideTable']/tbody/tr/td[1]");
-    private By lblArriveStation = By.xpath("//table[@class='MyTable WideTable']/tbody/tr/td[2]");
+    private final By cboDate = By.name("Date");
+    private final By cboDepartFrom = By.name("DepartStation");
+    private final By cboArriveAt = By.name("ArriveStation");
+    private final By cboSeatType = By.name("SeatType");
+    private final By cboTicketAmount = By.name("TicketAmount");
+    private final By btnBookTicket = By.xpath("//input[@value='Book ticket']");
+    private final By lblDepartStation = By.xpath("//table[@class='MyTable WideTable']/tbody/tr/td[1]");
+    private final By lblArriveStation = By.xpath("//table[@class='MyTable WideTable']/tbody/tr/td[2]");
 
     //WebElements
     private WebElement getCboDate() { return DriverHelper.getDriver().findElement(cboDate); }

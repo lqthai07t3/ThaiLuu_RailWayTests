@@ -1,6 +1,5 @@
 package tests;
 
-import com.sun.org.apache.bcel.internal.classfile.Constant;
 import common.Constants;
 import helpers.DriverHelper;
 import org.testng.annotations.AfterMethod;

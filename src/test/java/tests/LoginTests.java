@@ -1,6 +1,7 @@
 package tests;
 
 import common.Constants;
+import helpers.DriverHelper;
 import helpers.LogHelper;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -19,7 +20,7 @@ public class LoginTests extends BaseTest {
         loginPage.login(Constants.USERNAME, Constants.PASSWORD);
 
         Assert.assertTrue(
-                (loginPage.getTitlePage().equals("Safe Railway - Selenium Automation"))&(loginPage.isLogoutTabDisplay()),
+                (DriverHelper.getTitlePage().equals("Safe Railway - Selenium Automation"))&&(loginPage.isLogoutTabDisplayed()),
                 "User logs in unsuccessfully with valid account");
     }
 

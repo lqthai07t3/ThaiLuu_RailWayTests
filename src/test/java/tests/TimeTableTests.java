@@ -35,7 +35,7 @@ public class TimeTableTests extends BaseTest {
     }
 
     @Test
-    public void tc002_CheckLinkCheckPrice_ĐN_SG() {
+    public void tc002_CheckLinkCheckPrice_DN_SG() {
         LogHelper.info("Click on TimeTable Tab");
         timeTablePage.clickTimeTableTab();
 
@@ -131,7 +131,7 @@ public class TimeTableTests extends BaseTest {
         timeTablePage.clickBookTicket("Quảng Ngãi", "Nha Trang");
 
         Assert.assertTrue(
-                (bookTicketPage.getSelectedDepartFrom().equals("Quảng Ngãi")) & (bookTicketPage.getSelectedArriveAt().equals("Nha Trang")),
+                (bookTicketPage.getSelectedDepartFrom().equals("Quảng Ngãi")) && (bookTicketPage.getSelectedArriveAt().equals("Nha Trang")),
                 "Data transfers incorrectly");
     }
 
@@ -147,7 +147,7 @@ public class TimeTableTests extends BaseTest {
         timeTablePage.clickBookTicket("Sài Gòn", "Huế");
 
         Assert.assertTrue(
-                (bookTicketPage.getSelectedDepartFrom().equals("Sài Gòn")) & (bookTicketPage.getSelectedArriveAt().equals("Huế")),
+                (bookTicketPage.getSelectedDepartFrom().equals("Sài Gòn")) && (bookTicketPage.getSelectedArriveAt().equals("Huế")),
                 "Data transfers incorrectly");
     }
 
@@ -163,7 +163,7 @@ public class TimeTableTests extends BaseTest {
         timeTablePage.clickBookTicket("Đà Nẵng", "Nha Trang");
 
         Assert.assertTrue(
-                (bookTicketPage.getSelectedDepartFrom().equals("Đà Nẵng")) & (bookTicketPage.getSelectedArriveAt().equals("Nha Trang")),
+                (bookTicketPage.getSelectedDepartFrom().equals("Đà Nẵng")) && (bookTicketPage.getSelectedArriveAt().equals("Nha Trang")),
                 "Data transfers incorrectly");
 
     }

@@ -25,4 +25,6 @@ public class DriverHelper {
         return driver;
     }
 
+    public static String getTitlePage() { return driver.getTitle(); }
+
 }

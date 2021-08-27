@@ -7,7 +7,7 @@ import org.openqa.selenium.WebElement;
 public class TicketPricePage extends BasePage {
 
     //locators
-    private By titleOfTableTicket = By.xpath("//th[starts-with(text(),'Ticket price from')]");
+    private final By titleOfTableTicket = By.xpath("//th[starts-with(text(),'Ticket price from')]");
 
     //WebElements
     private WebElement getTitleOfTableTicket() { return DriverHelper.getDriver().findElement(titleOfTableTicket); }

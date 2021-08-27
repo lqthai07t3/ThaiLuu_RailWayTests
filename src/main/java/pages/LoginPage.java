@@ -7,10 +7,10 @@ import org.openqa.selenium.WebElement;
 public class LoginPage extends BasePage {
 
     //Locators
-    private By txtEmail = By.id("username");
-    private By txtPassword = By.id("password");
-    private By btnLogin = By.xpath("//input[@value='Login']");
-    private By lblErrorMessage = By.className("error");
+    private final By txtEmail = By.id("username");
+    private final By txtPassword = By.id("password");
+    private final By btnLogin = By.xpath("//input[@value='Login']");
+    private final By lblErrorMessage = By.className("error");
 
     //WebElements
     private WebElement getTxtEmail() {
