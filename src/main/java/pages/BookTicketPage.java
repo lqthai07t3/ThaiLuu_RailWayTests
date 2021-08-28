@@ -31,6 +31,7 @@ public class BookTicketPage extends BasePage {
         return DriverHelper.getDriver().findElement(lblArriveStation);
     }
 
+    @org.jetbrains.annotations.NotNull
     private Select getDrpDepartDate() { Select select = new Select(getCboDate()); return select; }
     private Select getDrpDepartFrom() { Select select = new Select(getCboDepartFrom()); return select; }
     private Select getDrpArriveAt() { Select select = new Select(getCboArriveAt()); return select; }
@@ -77,4 +78,6 @@ public class BookTicketPage extends BasePage {
         selectTicketAmount(numberOfTicket);
         getBtnBookTicket().click();
     }
+
+
 }

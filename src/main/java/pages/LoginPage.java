@@ -22,11 +22,12 @@ public class LoginPage extends BasePage {
     private WebElement getBtnLogin() {
         return DriverHelper.getDriver().findElement(btnLogin);
     }
+
+
+    //Methods
     public String getErrorMessage() {
         return DriverHelper.getDriver().findElement(lblErrorMessage).getText();
     }
-
-    //Methods
     public void login(String email, String pass) {
         getTxtEmail().sendKeys(email);
         getTxtPassword().sendKeys(pass);
