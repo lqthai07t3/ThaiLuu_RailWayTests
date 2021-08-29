@@ -1,9 +1,12 @@
 package pages;
 
 import helpers.DriverHelper;
+import helpers.ElementHelper;
+import helpers.TicketHelper;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
+
 
 public class BookTicketPage extends BasePage {
 
@@ -50,9 +53,7 @@ public class BookTicketPage extends BasePage {
     public String getSelectedTicketAmount() { return getDrpTicketAmount().getFirstSelectedOption().getText(); }
 
     //Set value to Combobox
-    public void selectDepartDate(int index) {
-        getDrpDepartDate().selectByIndex(index);
-    }
+    public void selectDepartDate(String date) { getDrpDepartDate().selectByVisibleText(date); }
     public void selectDepartStation(String station) {
         getDrpDepartFrom().selectByVisibleText(station);
     }
@@ -70,13 +71,23 @@ public class BookTicketPage extends BasePage {
         return getLbArriveStation().getText();
     }
 
-    public void bookTicket(int theDayFromNow, String from, String at, String seat, String numberOfTicket) {
-        selectDepartDate(theDayFromNow);
-        selectDepartStation(from);
-        selectArriveStation(at);
-        selectSeatType(seat);
-        selectTicketAmount(numberOfTicket);
-        getBtnBookTicket().click();
+//    public void bookTicket(int theDayFromNow, String from, String at, String seat, String numberOfTicket) {
+//        selectDepartDate(theDayFromNow);
+//        selectDepartStation(from);
+//        selectArriveStation(at);
+//        selectSeatType(seat);
+//        selectTicketAmount(numberOfTicket);
+//        getBtnBookTicket().click();
+//    }
+
+    public void bookTicket(TicketHelper ticket){
+        this.selectDepartDate(ticket.getDepartDate());
+        this.selectDepartStation(ticket.getDepartStation());
+        this.selectArriveStation(ticket.getArriveStation());
+        this.selectSeatType(ticket.getSeatType());
+        this.selectTicketAmount(ticket.getTicketAmount());
+        ElementHelper.scrollToElement(getBtnBookTicket());
+        this.getBtnBookTicket().click();
     }
 
 

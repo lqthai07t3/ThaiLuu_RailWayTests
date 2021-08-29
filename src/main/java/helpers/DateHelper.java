@@ -6,7 +6,7 @@ import java.util.Date;
 
 public class DateHelper {
 
-    private static SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
+    private static SimpleDateFormat dateFormat = new SimpleDateFormat("M/d/yyyy");
 
     //Get Date of Today.
     public static String getToday() {
