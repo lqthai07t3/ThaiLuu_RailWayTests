@@ -1,11 +1,11 @@
 package pages;
 
-import helpers.DriverHelper;
-import helpers.ElementHelper;
-import helpers.TicketHelper;
+import helpers.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
+
+import java.util.concurrent.TimeUnit;
 
 
 public class BookTicketPage extends BasePage {
@@ -13,7 +13,7 @@ public class BookTicketPage extends BasePage {
     //locators
     private final By cboDate = By.name("Date");
     private final By cboDepartFrom = By.name("DepartStation");
-    private final By cboArriveAt = By.name("ArriveStation");
+    private final By cboArriveAt = By.cssSelector("#ArriveStation>select");
     private final By cboSeatType = By.name("SeatType");
     private final By cboTicketAmount = By.name("TicketAmount");
     private final By btnBookTicket = By.xpath("//input[@value='Book ticket']");
@@ -53,7 +53,7 @@ public class BookTicketPage extends BasePage {
     public String getSelectedTicketAmount() { return getDrpTicketAmount().getFirstSelectedOption().getText(); }
 
     //Set value to Combobox
-    public void selectDepartDate(String date) { getDrpDepartDate().selectByVisibleText(date); }
+    public void selectDepartDate(String dateString) { getDrpDepartDate().selectByVisibleText(dateString); }
     public void selectDepartStation(String station) {
         getDrpDepartFrom().selectByVisibleText(station);
     }
@@ -81,10 +81,18 @@ public class BookTicketPage extends BasePage {
 //    }
 
     public void bookTicket(TicketHelper ticket){
+        this.getCboDate().click();
         this.selectDepartDate(ticket.getDepartDate());
+        this.getCboDepartFrom().click();
         this.selectDepartStation(ticket.getDepartStation());
+        DriverHelper.getDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        this.getCboArriveAt().click();
+        //Wait for Arrive Station loads full
+        DriverHelper.getDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         this.selectArriveStation(ticket.getArriveStation());
+        this.getCboSeatType().click();
         this.selectSeatType(ticket.getSeatType());
+        this.getCboTicketAmount().click();
         this.selectTicketAmount(ticket.getTicketAmount());
         ElementHelper.scrollToElement(getBtnBookTicket());
         this.getBtnBookTicket().click();
